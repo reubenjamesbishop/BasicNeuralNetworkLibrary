@@ -21,11 +21,8 @@ void Matrix::Fill(double value)
 
 }
 
-<<<<<<< HEAD
-void Matrix::isEmpty()
-=======
+
 bool Matrix::isEmpty()
->>>>>>> d98b7db4b099212327e84dfb0bf7e18980369670
 {
 
 }
@@ -39,8 +36,26 @@ int Matrix::get_columns()
 {
   return data_.size()/rows_;
 }
-<<<<<<< HEAD
-=======
+
+void Matrix::print()
+{
+	rows_ = get_rows();
+	columns_ = get_columns();
+
+	int i=0;
+
+	//To print linear data in pretty matrix form
+	for(int j=0; j<rows_; j++)
+	{
+		for(int k=0; k<columns_; k++)
+		{
+			std::cout << data_[i] << "\t";
+			i++;
+		}
+		std::cout << std::endl;
+	}
+
+}
 
 Matrix Matrix::operator+(const Matrix& M) {
 
@@ -86,9 +101,4 @@ Matrix Matrix::operator-(const Matrix& M) {
 //Matrix multiplication operator
 Matrix Matrix::operator*(const Matrix& M) {
 
-
-
-
-
 }
->>>>>>> d98b7db4b099212327e84dfb0bf7e18980369670
