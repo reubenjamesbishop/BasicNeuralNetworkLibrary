@@ -40,7 +40,6 @@ public:
 	//Get #columns
 	int get_columns();
 
-
 	//Matrix Addition and subtraction operators
 	Matrix operator+(const Matrix& M);
 	Matrix operator-(const Matrix& M);
@@ -48,8 +47,10 @@ public:
 	//Matrix multiplication operator
 	Matrix operator*(const Matrix& M);
 
-	//Linearise a matrix into a vector;
+	//Linearised matrix in vector form;
 	std::vector<double> data_;
+
+	//Rows and columns of matrix
 	int rows_;
 	int cols_;
 

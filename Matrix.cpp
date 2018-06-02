@@ -1,5 +1,22 @@
 #include "Matrix.h"
 
+int dotProduct(vector<double> a, vector<double> b)
+{
+	double dotProduct_ = 0;
+
+	if(int(a.size()) != int(size()))
+	{
+		std::cout << "ERROR: Matrix dimensions won't dot..." << std::endl;
+		return 0;
+	}
+
+	for(int i=0; i<int(a.size()); i++)
+	{
+		dotProduct_ += (a[i] * b[i]);
+	}
+
+	return dotProduct_;
+}
 
 Matrix::Matrix(int rows, int cols, int init_num) {
 
@@ -142,6 +159,10 @@ Matrix newM(rowsA_, columnsB_, 0);
 
 //Populate it with values
 int i=0;
+
+/* Easiest way is to be able to access rows and columns
+of each matrix as individual vectors, and then just use the
+dot product function i have written at the start... */
 
 
 
