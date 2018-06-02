@@ -55,6 +55,4 @@ private:
 
 };
 
-#endif
-=======
 #endif //MATRIX_H
