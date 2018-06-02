@@ -1,21 +1,21 @@
 #include "Matrix.h"
 
-int dotProduct(vector<double> a, vector<double> b)
+int dotProduct(Matrix a, Matrix b)
 {
-	double dotProduct_ = 0;
+	double dot_product = 0;
 
-	if(int(a.size()) != int(size()))
+	if ((a.size() != b.size()) || (a.getRows() != b.getRows()))
 	{
 		std::cout << "ERROR: Matrix dimensions won't dot..." << std::endl;
 		return 0;
 	}
 
-	for(int i=0; i<int(a.size()); i++)
+	for (int i = 0; i < a.size(); i++)
 	{
-		dotProduct_ += (a[i] * b[i]);
+		dot_product += a.data_[i] * b.data_[i];
 	}
 
-	return dotProduct_;
+	return dot_product;
 }
 
 Matrix::Matrix(int rows, int cols, int init_num) {
@@ -58,14 +58,24 @@ bool Matrix::isEmpty()
 
 }
 
-int Matrix::get_rows()
+double Matrix::At(int i, int j)
+{
+	return data_[j*cols_ + i];
+}
+
+
+int Matrix::getRows()
 {
   return rows_;
 }
 
-int Matrix::get_columns()
+int Matrix::getCols()
 {
   return cols_;
+}
+
+int Matrix::size() {
+	return data_.size();
 }
 
 void Matrix::Print()
@@ -134,28 +144,29 @@ Matrix Matrix::operator-(const Matrix& M) {
 //Matrix multiplication operator
 Matrix Matrix::operator*(const Matrix& M) {
 
-//Get values
-int rowsA_ = this->rows_;
-int rowsB_ = M.get_rows();
-int columnsA_ = this->columns_;
-int columnsB_ = M.get_columns();
+	//Get values
+	int rowsA_ = this->rows_;
+	int rowsB_ = M.rows_;
 
-//Error check dimensions
-if(columnsA_ != rowsB_)
-{
-	std::cout << "ERROR: Matrix dimensions incompatible for multiplication..." << std::endl;
-	return NULL;
-}
+	int columnsA_ = this->cols_;
+	int columnsB_ = M.cols_;
 
-//Create a new blank matrix of correct size
-Matrix newM(rowsA_, columnsB_, 0);
+	//Create a new blank matrix of correct size
+	Matrix newM(rowsA_, columnsB_, 0);
 
-//Populate it with values
-int i=0;
+	//Error check dimensions
+	if(columnsA_ != rowsB_)
+	{
+		std::cout << "ERROR: Matrix dimensions incompatible for multiplication..." << std::endl;
+		return newM;
+	}
 
-/* Easiest way is to be able to access rows and columns
-of each matrix as individual vectors, and then just use the
-dot product function i have written at the start... */
+	//Populate it with values
+	int i = 0;
+
+	/* Easiest way is to be able to access rows and columns
+	of each matrix as individual vectors, and then just use the
+	dot product function i have written at the start... */
 
 
 

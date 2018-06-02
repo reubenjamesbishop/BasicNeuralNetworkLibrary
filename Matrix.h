@@ -30,16 +30,22 @@ public:
 	bool isEmpty();
 
 	//Print the content of the matrix to the console
-	void print();
+	void Print();
 
 	//Invert the matrix
 	void Invert();
 
+	//access the variable at [i,j]
+	double At(int i, int j);
+
 	//Get #rows
-	int get_rows();
+	int getRows();
 
 	//Get #columns
-	int get_columns();
+	int getCols();
+
+	//return size of data vector
+	int size();
 
 	//Matrix Addition and subtraction operators
 	Matrix operator+(const Matrix& M);

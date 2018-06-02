@@ -12,10 +12,16 @@ public:
 	NeuralNetwork(int inputs, int outputs, int hiddenHeight, int hiddenLayers);
 
 
+	Matrix FeedForward(Matrix inputData);
+
+
 private:
 
-	Matrix* weights;
+	//vector holding weights for connections between each layer of the network
 
+	std::vector<Matrix> weights_;
+
+	int numOutputs_;
 };
 
 #endif //NUERALNETWORK_H
