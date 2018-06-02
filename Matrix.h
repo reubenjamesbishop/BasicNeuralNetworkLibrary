@@ -5,56 +5,47 @@
 #define MATRIX_H
 
 #include <iostream>
-
 #include <vector>
 
 class Matrix {
+public:
 
-public: 
-
+	//Constructor takes #rows, #columns, and fill value
 	Matrix(int rows, int cols, int init_num = 0);
 
-	void Randomize(); // could replace this with special case of fill
-
+	//Populate elements of a matrix with value
 	void Fill(int value);
 
-	bool Empty();
+	//Randomize all elements in a matrix
+	void Randomize(); // could replace this with special case of fill
 
+	//Returns true if matrix is all 0's
+	bool isEmpty();
+
+	//Print the content of the matrix to the console
 	void Print();
 
+	//Invert the matrix
 	void Invert();
 
-
-
-	//Get rows
+	//Get #rows
 	int get_rows();
 
-	//Get columns
+	//Get #columns
 	int get_columns();
 
 
 	//Matrix Addition and subtraction operators
-
 	Matrix operator+(const Matrix& M);
-
 	Matrix operator-(const Matrix& M);
 
-
 	//Matrix multiplication operator
-
 	Matrix operator*(const Matrix& M);
 
-
-	//using a vector to store a 'flattened' matrix;
+	//Linearise a matrix into a vector;
 	std::vector<double> data_;
-
 	int rows_;
-
-private:
-
 
 };
 
-#endif
-=======
 #endif //MATRIX_H
