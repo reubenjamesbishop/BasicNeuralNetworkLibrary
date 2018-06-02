@@ -39,10 +39,16 @@ int Matrix::get_columns()
 
 void Matrix::print()
 {
-	rows_ = get_rows();
-	columns_ = get_columns();
-
+	int rows_ = get_rows();
+	int columns_ = get_columns();
 	int i=0;
+
+	//Error check
+	if( rows_ * data_ != int(data_.size()) )
+	{
+		std::cout << "Error! Matrix dimensions dont work..." << std::endl;
+		return;
+	}
 
 	//To print linear data in pretty matrix form
 	for(int j=0; j<rows_; j++)
