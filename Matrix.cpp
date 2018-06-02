@@ -124,4 +124,25 @@ Matrix Matrix::operator-(const Matrix& M) {
 //Matrix multiplication operator
 Matrix Matrix::operator*(const Matrix& M) {
 
+//Get values
+int rowsA_ = this->rows_;
+int rowsB_ = M.get_rows();
+int columnsA_ = this->columns_;
+int columnsB_ = M.get_columns();
+
+//Error check dimensions
+if(columnsA_ != rowsB_)
+{
+	std::cout << "ERROR: Matrix dimensions incompatible for multiplication..." << std::endl;
+	return NULL;
+}
+
+//Create a new blank matrix of correct size
+Matrix newM(rowsA_, columnsB_, 0);
+
+//Populate it with values
+int i=0;
+
+
+
 }
