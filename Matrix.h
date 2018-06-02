@@ -13,8 +13,11 @@ public:
 	//Constructor takes #rows, #columns, and fill value
 	Matrix(int rows, int cols, int init_num = 0);
 
+	//Copy Constructor, makes a copy of the parsed object
+	Matrix(const Matrix &M);
+
 	//Populate elements of a matrix with value
-	void Fill(int value);
+	void Fill(double value);
 
 	//Randomize all elements in a matrix
 	void Randomize(); // could replace this with special case of fill
@@ -45,6 +48,7 @@ public:
 	//Linearise a matrix into a vector;
 	std::vector<double> data_;
 	int rows_;
+	int cols_;
 
 };
 
