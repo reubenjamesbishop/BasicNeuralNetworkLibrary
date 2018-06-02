@@ -21,7 +21,11 @@ void Matrix::Fill(double value)
 
 }
 
+<<<<<<< HEAD
+void Matrix::isEmpty()
+=======
 bool Matrix::isEmpty()
+>>>>>>> d98b7db4b099212327e84dfb0bf7e18980369670
 {
 
 }
@@ -35,6 +39,8 @@ int Matrix::get_columns()
 {
   return data_.size()/rows_;
 }
+<<<<<<< HEAD
+=======
 
 Matrix Matrix::operator+(const Matrix& M) {
 
@@ -85,3 +91,4 @@ Matrix Matrix::operator*(const Matrix& M) {
 
 
 }
+>>>>>>> d98b7db4b099212327e84dfb0bf7e18980369670
