@@ -1,7 +1,6 @@
 #include "Matrix.h"
 
 
-<<<<<<< HEAD
 Matrix::Matrix(int rows, int cols, int init_num) {
 
 	data_.resize(rows * cols, init_num);;
@@ -9,20 +8,7 @@ Matrix::Matrix(int rows, int cols, int init_num) {
 	rows_ = rows;
 }
 
-=======
-Matrix::Matrix()
-{
-  //
-}
->>>>>>> 0bd8334951e45cb8c888cc5b60d90f90d666796c
-
-Matrix::Matrix(int rows, int columns)
-{
-  rows = rows;
-  columns = columns;
-}
-
-void Matrix::Fill(/* ? */)
+void Matrix::Fill(int value)
 {
 
 }
@@ -39,5 +25,5 @@ int Matrix::get_rows()
 
 int Matrix::get_columns()
 {
-  return columns;
+  return data_.size()/rows_;
 }
