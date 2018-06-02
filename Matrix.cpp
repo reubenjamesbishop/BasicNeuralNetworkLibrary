@@ -2,17 +2,21 @@
 
 int dotProduct(Matrix a, Matrix b)
 {
+
+	//Initialise DP at 0
 	double dot_product = 0;
 
+	//Check that dimensions play nice
 	if ((a.size() != b.size()) || (a.getRows() != b.getRows()))
 	{
 		std::cout << "ERROR: Matrix dimensions won't dot..." << std::endl;
 		return 0;
 	}
 
+	//Run the DP process
 	for (int i = 0; i < a.size(); i++)
 	{
-		dot_product += a.data_[i] * b.data_[i];
+		dot_product += (a.data_[i] * b.data_[i]);
 	}
 
 	return dot_product;
@@ -21,7 +25,6 @@ int dotProduct(Matrix a, Matrix b)
 Matrix::Matrix(int rows, int cols, int init_num) {
 
 	data_.resize(rows * cols, init_num);;
-
 	rows_ = rows;
 	cols_ = cols;
 }
@@ -29,9 +32,7 @@ Matrix::Matrix(int rows, int cols, int init_num) {
 Matrix::Matrix(const Matrix &M) {
 
 	data_ = M.data_;
-
 	rows_ = M.rows_;
-
 	cols_ = M.cols_;
 }
 
@@ -45,7 +46,7 @@ void Matrix::Fill(double value)
 void Matrix::Randomize()
 {
 
-	for (int i = 0; i < data_.size(); ++i)
+	for (int i = 0; i < int(data_.size()); ++i)
 	{
 		data_[i] = 1.0f * rand()/RAND_MAX;
 	}
