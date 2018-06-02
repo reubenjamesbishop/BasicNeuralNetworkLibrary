@@ -22,6 +22,9 @@ public:
 	//Randomize all elements in a matrix
 	void Randomize(); // could replace this with special case of fill
 
+	//Set all values to 0
+	void Empty();
+
 	//Returns true if matrix is all 0's
 	bool isEmpty();
 
