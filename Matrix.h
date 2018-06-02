@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-#ifndef MATRIX_H
-#define MATRIX_H
-
-=======
 // Class to perform matrix manipulation calculations
 // for the Neural Network library.
 
@@ -10,19 +5,11 @@
 #define MATRIX_H
 
 #include <iostream>
->>>>>>> 0bd8334951e45cb8c888cc5b60d90f90d666796c
+
 #include <vector>
 
 class Matrix {
-public:
 
-  //Default Matrix
-  Matrix();
-
-  //Matrix constructor given size
-  Matrix(int rows, int columns);
-
-<<<<<<< HEAD
 public: 
 
 	Matrix(int rows, int cols, int init_num = 0);
@@ -36,6 +23,14 @@ public:
 	void Print();
 
 	void Invert();
+
+
+
+	//Get rows
+	int get_rows();
+
+	//Get columns
+	int get_columns();
 
 
 	//Matrix Addition and subtraction operators
@@ -56,30 +51,10 @@ public:
 	int rows_;
 
 private:
-=======
-  //Populate a matrix with values
-  void Fill(/* I don't know how we will fill it yet */);
 
-  //Set all values to 0
-  void Empty();
-
-  //Get rows
-  int get_rows();
->>>>>>> 0bd8334951e45cb8c888cc5b60d90f90d666796c
-
-  //Get columns
-  int get_columns();
-
-private:
-
-  int rows;
-  int columns;
 
 };
-
-<<<<<<< HEAD
 
 #endif
 =======
 #endif //MATRIX_H
->>>>>>> 0bd8334951e45cb8c888cc5b60d90f90d666796c
