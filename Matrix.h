@@ -26,7 +26,7 @@ public:
 	bool isEmpty();
 
 	//Print the content of the matrix to the console
-	void Print();
+	void print();
 
 	//Invert the matrix
 	void Invert();
