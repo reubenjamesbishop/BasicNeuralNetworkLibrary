@@ -1,5 +1,6 @@
 
 all: NN
+	g++ -o main.exe main.cpp NeuralNetwork.o Matrix.o
 
 
 NN: Matrix
