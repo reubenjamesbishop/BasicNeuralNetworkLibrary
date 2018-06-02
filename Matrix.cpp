@@ -13,7 +13,7 @@ void Matrix::Fill(int value)
 
 }
 
-void Matrix::Empty()
+void Matrix::isEmpty()
 {
 
 }
