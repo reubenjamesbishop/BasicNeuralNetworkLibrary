@@ -12,10 +12,13 @@ int main() {
 	M1.Randomize();
 	M2.Randomize();
 
+	M1.Print();
+	M2.Print();
+
+
 	Matrix M3 = M1 + M2;
 
 	M3.Print();
-
 
 	M3 = M3 - M1;
 

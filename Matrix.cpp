@@ -29,6 +29,10 @@ Matrix::Matrix(int rows, int cols, int init_num) {
 Matrix::Matrix(const Matrix &M) {
 
 	data_ = M.data_;
+
+	rows_ = M.rows_;
+
+	cols_ = M.cols_;
 }
 
 void Matrix::Fill(double value)
@@ -38,26 +42,19 @@ void Matrix::Fill(double value)
 
 }
 
-void Matrix::Empty()
+void Matrix::Randomize()
 {
-	for(int i=0; i<int(data_.size()); i++)
+
+	for (int i = 0; i < data_.size(); ++i)
 	{
-			data_[i] = 0;
+		data_[i] = 1.0f * rand()/RAND_MAX;
 	}
 
 }
 
+
 bool Matrix::isEmpty()
 {
-	for(int i=0; i<int(data_.size()); i++)
-	{
-		if(data_[i] != 0)
-		{
-			return false;
-		}
-	}
-
-	return true;
 
 }
 
@@ -68,29 +65,25 @@ int Matrix::get_rows()
 
 int Matrix::get_columns()
 {
-  return data_.size()/rows_;
+  return cols_;
 }
 
-void Matrix::print()
+void Matrix::Print()
 {
-	int rows_ = get_rows();
-	int columns_ = get_columns();
-	int i=0;
 
 	//Error check
-	if( rows_ * data_ != int(data_.size()) )
+	if( rows_ * cols_ != data_.size())
 	{
 		std::cout << "Error! Matrix dimensions dont work..." << std::endl;
 		return;
 	}
 
 	//To print linear data in pretty matrix form
-	for(int j=0; j<rows_; j++)
+	for(int i = 0; i < rows_; i++)
 	{
-		for(int k=0; k<columns_; k++)
+		for(int j = 0; j < cols_; j++)
 		{
-			std::cout << data_[i] << "\t";
-			i++;
+			std::cout << data_[i * cols_ + j] << "\t";
 		}
 		std::cout << std::endl;
 	}
