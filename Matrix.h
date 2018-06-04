@@ -36,7 +36,10 @@ public:
 	void Invert();
 
 	//access the variable at [i,j]
-	double At(int i, int j);
+	double At(int i, int j) const;
+
+	//set the variable at [i,j]
+	void Set(int i, int j, double val);
 
 	//Get #rows
 	int getRows();
