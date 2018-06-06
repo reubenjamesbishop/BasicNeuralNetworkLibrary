@@ -53,9 +53,26 @@ void Matrix::Randomize()
 
 }
 
+void Matrix::Empty()
+{
+	for(int i=0; i<int(data_.size()); i++)
+	{
+		data_[i] = 0;
+	}
+
+}
 
 bool Matrix::isEmpty()
 {
+	for(int i=0; i<int(data_.size()); i++)
+	{
+		if(data_[i] != 0)
+		{
+			return false;
+		}
+	}
+
+	return true;
 
 }
 
