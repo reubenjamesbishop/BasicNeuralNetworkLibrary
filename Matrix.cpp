@@ -76,9 +76,15 @@ bool Matrix::isEmpty()
 
 }
 
-double Matrix::At(int i, int j)
+double Matrix::At(int i, int j) const
 {
 	return data_[j*cols_ + i];
+}
+
+void Matrix::Set(int i, int j, double val)
+{
+
+	data_[j*cols_ + i] = val;
 }
 
 
@@ -185,6 +191,26 @@ Matrix Matrix::operator*(const Matrix& M) {
 	/* Easiest way is to be able to access rows and columns
 	of each matrix as individual vectors, and then just use the
 	dot product function i have written at the start... */
+
+	for (int i = 0; i < columnsB_; ++i)
+	{
+		/* code */
+		
+		for (int j = 0; j < rowsA_; ++j)
+		{
+
+			//newM set (i, j, sum)
+			int sum = 0;
+			for (int k = 0; k < columnsA_; ++k)
+			{
+				sum += At(k,j) * M.At(j,k);
+
+			}
+
+			newM.Set(i, j, sum);
+
+		}
+	}
 
 
 
